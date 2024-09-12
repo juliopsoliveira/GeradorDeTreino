@@ -89,16 +89,29 @@ function gerarTreino() {
     const grupo2 = document.getElementById('grupo2').value;
     const grupo3 = document.getElementById('grupo3').value;
     const incluirCardio = document.getElementById('cardio').value === 'true';
+    const incluirAbdomen = document.getElementById('abdomen').value === 'true';
 
-    const gruposSelecionados = [grupo1, grupo2, grupo3].filter(grupo => grupo !== "");
+    // num de exerc
+    const quantidadeGrupo1 = parseInt(document.getElementById('quantidadeGrupo1').value);
+    const quantidadeGrupo2 = parseInt(document.getElementById('quantidadeGrupo2').value);
+    const quantidadeGrupo3 = parseInt(document.getElementById('quantidadeGrupo3').value);
 
-    // Define quantos exercícios aleatórios você quer de cada grupo (ex: 3 exercícios)
-    const quantidadeDeExercicios = 3;
 
-    gruposSelecionados.forEach(grupo => {
+    const gruposSelecionados = [
+        {grupo: grupo1, quantidade: quantidadeGrupo1 },
+        {grupo: grupo2, quantidade: quantidadeGrupo2 },
+        {grupo: grupo3, quantidade: quantidadeGrupo3 }
+    ].filter(item => item.grupo !=="");
+    
+
+
+    
+    gruposSelecionados.forEach(({ grupo, quantidade }) => {
         let exercicios = exerciciosDisponiveis[grupo];
         exercicios = embaralharArray(exercicios);  // Embaralha a lista de exercícios
-        const exerciciosSelecionados = exercicios.slice(0, quantidadeDeExercicios);  // Seleciona a quantidade desejada
+
+        
+        const exerciciosSelecionados = exercicios.slice(0, quantidade);
 
         treinoDiv.innerHTML += `<h3>${grupo.charAt(0).toUpperCase() + grupo.slice(1)}</h3>`;
         exerciciosSelecionados.forEach(exercicio => {
@@ -106,7 +119,12 @@ function gerarTreino() {
         });
     });
 
+
     if (incluirCardio) {
         treinoDiv.innerHTML += `<h3>Cardio</h3><p>30 minutos de exercício aeróbico moderado (corrida, bicicleta, etc.)</p>`;
     }
-};
+
+    if (incluirAbdomen) {
+        treinoDiv.innerHTML += `<h3>Abdomen</h3><p>Abdominal Supra (3x15), Prancha (3x30s), Abdominal Infra com Elevação de Pernas (3x12).)</p>`;
+    }
+}; 

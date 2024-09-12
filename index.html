@@ -9,7 +9,7 @@
 <body>
     
     <h1>Julinho trainings</h1>
-    <h2>Escolha os Grupos Musculares e Cardio</h2>
+    <h2>Escolha o que vc ira treinar</h2>
     <form id="treinoForm">
         <div id="costasd">
             <div>
@@ -23,6 +23,14 @@
                     <option value="triceps">Tríceps</option>
                     <option value="perna">Perna</option>
                 </select>
+                <label for="quantidadeGrupo1"></label>
+                <select id="quantidadeGrupo1">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
             </div>
             <div>
                 <label for="grupo2">Grupo Muscular 2:</label>
@@ -34,6 +42,14 @@
                     <option value="biceps">Bíceps</option>
                     <option value="triceps">Tríceps</option>
                     <option value="perna">Perna</option>
+                </select>
+                <label for="quantidadeGrupo2"></label>
+                <select id="quantidadeGrupo2">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
                 </select>
             </div>
             <div>
@@ -47,12 +63,30 @@
                     <option value="triceps">Tríceps</option>
                     <option value="perna">Perna</option>
                 </select>
+                <label for="quantidadeGrupo3"></label>
+                <select id="quantidadeGrupo3">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
             </div>
 
-            <!-- Dropdown para cardio -->
+            <!-- Drop cardio -->
             <div>
                 <label for="cardio">Incluir Cardio:</label>
                 <select id="cardio">
+                    <option value="false">Não</option>
+                    <option value="true">Sim</option>
+                </select>
+            </div>
+            <!-- incluir abdomen -->
+            <div>
+                
+                <label for="abdomen">incluir abdomen:</label>
+                <select id="abdomen">
                     <option value="false">Não</option>
                     <option value="true">Sim</option>
                 </select>
@@ -64,6 +98,7 @@
 
     <h2>Seu Treino</h2>
     <div id="treino"></div>
+    <div id="treino"><button type="button" onclick="baixarTreino()">Baixe seu Treino</button></div>
 
     <script src="script.js"></script>
 </body>
