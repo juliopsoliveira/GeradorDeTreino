@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>julinho treinos</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    
+    <h1>Julinho trainings</h1>
+    <h2>Escolha os Grupos Musculares e Cardio</h2>
+    <form id="treinoForm">
+        <div id="costasd">
+            <div>
+                <label for="grupo1">Grupo Muscular 1:</label>
+                <select id="grupo1" name="grupo">
+                    <option value="">Selecione um grupo muscular</option>
+                    <option value="peito">Peito</option>
+                    <option value="ombro">Ombro</option>
+                    <option value="costas">Costas</option>
+                    <option value="biceps">Bíceps</option>
+                    <option value="triceps">Tríceps</option>
+                    <option value="perna">Perna</option>
+                </select>
+            </div>
+            <div>
+                <label for="grupo2">Grupo Muscular 2:</label>
+                <select id="grupo2" name="grupo">
+                    <option value="">Selecione um grupo muscular</option>
+                    <option value="peito">Peito</option>
+                    <option value="ombro">Ombro</option>
+                    <option value="costas">Costas</option>
+                    <option value="biceps">Bíceps</option>
+                    <option value="triceps">Tríceps</option>
+                    <option value="perna">Perna</option>
+                </select>
+            </div>
+            <div>
+                <label for="grupo3">Grupo Muscular 3:</label>
+                <select id="grupo3" name="grupo">
+                    <option value="">Selecione um grupo muscular</option>
+                    <option value="peito">Peito</option>
+                    <option value="ombro">Ombro</option>
+                    <option value="costas">Costas</option>
+                    <option value="biceps">Bíceps</option>
+                    <option value="triceps">Tríceps</option>
+                    <option value="perna">Perna</option>
+                </select>
+            </div>
+
+            <!-- Dropdown para cardio -->
+            <div>
+                <label for="cardio">Incluir Cardio:</label>
+                <select id="cardio">
+                    <option value="false">Não</option>
+                    <option value="true">Sim</option>
+                </select>
+            </div>
+            <button type="button" onclick="gerarTreino()">Gerar Treino</button>
+        </div>
+        
+    </form>
+
+    <h2>Seu Treino</h2>
+    <div id="treino"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
